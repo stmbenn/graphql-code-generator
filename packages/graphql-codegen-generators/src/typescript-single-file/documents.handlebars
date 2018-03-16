@@ -1,6 +1,6 @@
 {{#each operations }}
 export namespace {{ toPascalCase name }} {
-  export type Variables = {
+  export type InputVariables = {
   {{#each variables}}
     {{ name }}{{#unless isRequired}}?{{/unless}}: {{ toPrimitive type }}{{#if isArray}}[]{{/if}}{{#unless isRequired}} | null{{/unless}};
   {{/each}}
